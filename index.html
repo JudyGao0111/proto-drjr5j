@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>全民運動課程報名系統｜Prototype 入口</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.pick a{display:block;color:inherit;border:2px solid var(--line);border-radius:18px;background:#fff;padding:24px;box-shadow:var(--sh);transition:.15s}
+.pick a:hover{border-color:var(--brand);text-decoration:none;transform:translateY(-2px)}
+.pick .ic{font-size:36px}.pick h2{margin:6px 0}.pick ul{margin:10px 0 0;padding-left:18px;color:var(--ink2);font-size:14px}
+.demo li{margin-bottom:6px}
+@media(max-width:680px){.pick{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap" style="padding-top:36px;padding-bottom:50px">
+  <section class="hero" style="padding:34px 36px">
+    <div class="tags" style="margin-bottom:10px"><span class="badge" style="background:rgba(255,255,255,.22);color:#fff">Prototype 示範版</span><span class="badge" style="background:rgba(255,255,255,.22);color:#fff">可點擊操作</span></div>
+    <h1>新北市全民運動課程報名系統</h1>
+    <p>整合多個計畫（運動熱區、女性常態運動、運動i臺灣…）與多家課程廠商的報名前後台。所有資料皆為示範資料，存在您的瀏覽器中，隨時可重置。</p>
+  </section>
+
+  <div class="pick">
+    <a href="front.html"><div class="ic">📱</div><h2>前台｜民眾端</h2><div class="muted small">手機、電腦皆可操作</div><ul><li>首頁、依行政區找課程、搜尋篩選</li><li>課程詳情與報名須知</li><li>會員註冊／登入（身分證字號＋驗證碼）</li><li>報名流程（含長期班每年 2 班限制、候補、審核）</li><li>會員中心：我的課表、QR 簽到簽退、體適能前後測、問卷、通知、獎勵與目標</li></ul></a>
+    <a href="admin.html"><div class="ic">🖥️</div><h2>後台｜體育局／廠商端</h2><div class="muted small">建議以電腦操作；右上可切換身分</div><ul><li>儀表板（跨計畫、跨廠商總覽）</li><li>班級管理、場次、改期／停課＋通知</li><li>QR 簽到、紙本備援補登、報名審核與候補遞補</li><li>體適能匯入（局端格式、身分證比對）</li><li>成果統計報表、滿意度統計、新北幣名單匯出、通知與公告</li></ul></a>
+  </div>
+
+  <div class="grid g2 mt" style="margin-top:28px;align-items:start">
+    <section class="card"><h2>建議的示範順序（約 5 分鐘）</h2>
+      <ol class="demo" style="padding-left:20px;margin:0">
+        <li><b>前台</b>：點「使用示範帳號登入（陳美玲）」→ 看「會員中心」的獎勵與目標。</li>
+        <li><b>前台</b>：找課程 → 報名「肌力雕塑班」成功 → 再看「太極養生班」，會被「每年最多 2 班」擋下。</li>
+        <li><b>前台</b>：會員中心 → 簽到簽退 →「掃描 QR Code 簽到」（模擬）。</li>
+        <li><b>後台</b>（切換成「廠商：飛躍運動企業社」）：場次與簽到 → 看到該學員已簽到；對下一堂「改期／停課」並通知學員。</li>
+        <li><b>後台</b>：體適能匯入 → 使用範例檔 → 確認匯入 → 回前台「我的體適能」看到本期前測。</li>
+        <li><b>後台</b>（切回體育局）：成果統計報表（局端格式）、滿意度統計、新北幣名單匯出。</li>
+      </ol></section>
+    <section class="card"><h2>示範資料與重置</h2>
+      <p class="small">示範日期固定為 <b>2027/04/21（三）</b>：部分班級已開課、部分正在報名、一班尚未開放、一班已結束，方便展示各種狀態。</p>
+      <p class="small">資料儲存在瀏覽器 localStorage；前台與後台共用同一份，因此前台報名後，後台名單會立即看到。</p>
+      <button class="btn danger" id="reset">重置示範資料</button>
+      <p class="xs muted mt">示範學員：陳美玲，密碼 <b>Demo1234</b>（前台登入頁也有一鍵登入按鈕）；驗證碼一律 <b>123456</b>。所有姓名、身分證、電話皆為虛構，請勿輸入真實密碼。</p></section>
+  </div>
+
+  <section class="card mt" style="margin-top:22px;border-color:#f7c3aa;background:#fffaf6"><h2>💬 想調整畫面？直接在畫面上回報</h2>
+    <p class="small">前台、後台、本頁右下角都有「<b>回報修改</b>」按鈕，點開後：</p>
+    <ol class="small" style="padding-left:20px;display:grid;gap:5px;margin:0 0 10px">
+      <li>系統<b>自動帶入</b>修改位置（前台／後台）、頁面名稱、裝置（手機／電腦）、檢視身分（體育局／廠商）。連目前開著的彈出視窗也能辨識。</li>
+      <li>按「🎯 在畫面上點選位置」，再點一下要改的地方，會自動寫出「【按鈕】『我要報名』，在『報名名額』區塊」這類描述。</li>
+      <li>填「改什麼」「為什麼」，選優先順序（必改／想要／先不改只討論）；可選圖或直接 Ctrl+V 貼上截圖（Win+Shift+S 截圖）。</li>
+      <li>到「我的回報清單」按 <b>⬇ 匯出 Excel</b>，欄位與《Prototype修改需求回報表.xlsx》相同，圖片會放在「截圖」工作表。把檔案放進專案資料夾，告訴我檔名即可。</li>
+    </ol>
+    <p class="xs muted" style="margin:0">回報清單只存在這台電腦的瀏覽器，與示範資料的「重置」互不影響；匯出前請先不要清除瀏覽器資料。</p></section>
+
+  <section class="card mt" style="margin-top:22px"><h2>需求對照（會議 2026/11/16 ＋ 網頁建置需求說明）</h2>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th>需求</th><th>在原型中的呈現</th></tr></thead><tbody>
+      <tr><td>前台：民眾報名、依行政區看課程</td><td>前台首頁「依行政區找課程」、課程列表篩選、報名流程</td></tr>
+      <tr><td>會員以身分證字號註冊、同意鈕、Email／簡訊驗證</td><td>註冊時以簡訊或 Email 驗證一次（示範碼 123456），同意條款可點開閱讀；登入為「帳號（身分證字號）＋密碼」，含忘記密碼流程；修改手機／Email 需重新驗證</td></tr>
+      <tr><td>首頁輪播 Banner、最新消息（含圖片與附件）</td><td>前台首頁 Banner 與最新 5 則、最新消息專屬分頁；後台「前台內容管理」僅最高管理員與局端帳號可上架，廠商無權限</td></tr>
+      <tr><td>課程列表可切換呈現方式</td><td>前台找課程：卡片／條列切換</td></tr>
+      <tr><td>審核備註（僅內部可見）</td><td>後台報名名單與審核新增「備註」欄，民眾看不到，匯出名單時一併帶出</td></tr>
+      <tr><td>開放所有民眾報名，不限新北市民或戶籍</td><td>報名頁與須知皆不檢查戶籍；僅女性計畫限女性</td></tr>
+      <tr><td>24 堂帶狀課每人每年最多報 2 班（以班為單位）</td><td>班級設定有「計入長期班限制」屬性；前台第 3 班被擋，並顯示已報 n／2 班</td></tr>
+      <tr><td>各班自訂報名期間、一年皆可開班</td><td>班級管理：報名開始／截止、堂數、星期、名額可自訂</td></tr>
+      <tr><td>N 家廠商各自上架、編輯課程；不限家數</td><td>後台右上切換廠商身分，只看到自己班級；體育局看全部</td></tr>
+      <tr><td>臨時異動須通知學員（Email／簡訊）</td><td>場次「改期／停課」與「通知與公告」，含簡訊額度預估；前台「通知」同步可見</td></tr>
+      <tr><td>變更須於活動前 2 週函報機關（不可抗力除外）</td><td>改期視窗依距離天數提示，未滿 2 週需勾選機關同意或選擇不可抗力原因</td></tr>
+      <tr><td>QR Code 簽到簽退＋紙本備援，廠商可後台補登</td><td>前台模擬掃描；後台 QR 視窗、出缺席登載、紙本簽到表列印</td></tr>
+      <tr><td>出席率對廠商很重要，可即時查看</td><td>後台儀表板、場次出席數、出席率總表</td></tr>
+      <tr><td>體適能前後測；格式以局端為準，匯入一次、以身分證比對</td><td>後台體適能匯入（一般／銀髮兩種欄位格式，驗證重複與格式錯誤）；前台前後測比較</td></tr>
+      <tr><td>滿意度問卷全市統一、由體育局提供</td><td>前台依「附件 3」問卷填答；後台依「附件 4」統計格式呈現與匯出</td></tr>
+      <tr><td>結案匯出出席率、報到率、問卷；成果報告統計表</td><td>成果統計報表依局端「總體統計表」格式（年齡統計表、各場次人數統計表）並可匯出 CSV</td></tr>
+      <tr><td>新北幣不介接，系統匯出符合名單</td><td>新北幣名單：設定條件、篩選、匯出 CSV 與匯出紀錄</td></tr>
+      <tr><td>會員可看歷次體適能、已報課程、獎勵與目標</td><td>前台會員中心總覽、我的課表、我的體適能</td></tr>
+      <tr><td>民眾端手機可操作；後台以電腦為佳</td><td>前台響應式；後台為桌面版面（手機可瀏覽）</td></tr>
+    </tbody></table></div></section>
+
+  <section class="card mt" style="margin-top:22px"><h2>尚未定案的事項（原型中以「待確認」標籤標示）</h2>
+    <p class="small muted">以下為會議紀錄「待確認」項目，原型僅以示意方式呈現，需體育局確認後調整。</p>
+    <ul class="small" style="padding-left:20px;display:grid;gap:5px">
+      <li><span class="tbd">待確認 #5</span> 簡訊平台與簡訊量：是否有體育局自有簡訊平台，或由承辦廠商協助洽合作簡訊商（預先儲值扣抵）。</li>
+      <li><span class="tbd">待確認 #7</span> 新北幣於招標文件的載明方式；系統以匯出名單配合。</li>
+      <li><span class="tbd">待確認 #9</span> 問卷填答時機（報名後、上課至某階段、最後一堂），以及最後一堂請假者的處理。原型於班級設定提供三種選項。</li>
+      <li><span class="tbd">待確認 #10</span> 獎勵發放條件：出席率門檻、體適能進步幅度的換算方式（第一次測得較差者較易進步，需審慎設計）。</li>
+      <li><span class="tbd">待確認 #11</span> 連結「我的新北市 APP」「新北運動聚點 FB」、發布消息：原型放置了頂部連結與後台發布公告，實際網址待提供。</li>
+      <li>其他：上線時程與分階段方案、網址方案、無障礙等級、金流（初步認知為免費、不含金流）。</li>
+    </ul></section>
+
+  <p class="xs muted center" style="margin-top:26px">Prototype 僅供需求溝通與流程確認：QR Code 為示意、驗證碼為固定值、體適能匯入以範例資料示意；非正式系統。</p>
+</div>
+<script src="js/gate-config.js"></script>
+<script src="js/gate.js" data-scripts="js/core.js,js/ui.js,js/feedback.js,js/index.js"></script>
+</body>
+</html>

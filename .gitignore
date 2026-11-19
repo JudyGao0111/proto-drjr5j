@@ -1,0 +1,9 @@
+# 回報修改匯出檔、參考資料等不應上傳
+*.xlsx
+*.xls
+*.csv
+*.wav
+*.zip
+*.pdf
+*.docx
+*.ai
