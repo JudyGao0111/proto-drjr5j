@@ -1,3 +1,2 @@
-/* 雲端存取密碼設定（只有「從雲端網址開啟」時才會要求輸入密碼；本機開啟不受影響）。
-   更換密碼：用「雲端上架工具\設定存取密碼.html」產生新內容後整份覆蓋此檔。 */
-window.GATE_CONFIG = { salt: '411383cc494103c640e27fffd7fe9926', iter: 150000, hash: 'a721036cb76461e5eb88e628cf57e38891c079687c7795708ed2ee1537960bda', days: 7 };
+/* 雲端存取密碼設定（由「設定存取密碼.html」產生）。只有從雲端網址開啟時才會要求輸入密碼。 */
+window.GATE_CONFIG = { salt: '5bd3d722cbfb8db4d899766f4f447774', iter: 150000, hash: 'cc32f8d44d9ca4c76edb645116912649e6baf5cbd418c88976b1eb2219b42ae0', days: 30 };
