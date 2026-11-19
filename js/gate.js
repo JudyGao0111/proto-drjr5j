@@ -11,7 +11,7 @@
   const KEY = 'ntpc-proto-gate-v1';
 
   const load = i => { if (i >= list.length) return; const s = document.createElement('script'); s.src = list[i]; s.onload = () => load(i + 1); s.onerror = () => console.error('載入失敗：' + list[i]); document.body.appendChild(s); };
-  const start = () => load(0);
+  const start = () => { document.querySelectorAll('[data-gated]').forEach(e => { e.hidden = false; }); load(0); };
   if (isLocal && !force) { start(); return; }
 
   const read = st => { try { return JSON.parse(st.getItem(KEY) || 'null'); } catch (e) { return null; } };
